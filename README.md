@@ -2,17 +2,20 @@
 
 ## 🚀 Project Overview
 
-This project is a **Social Media Monitoring System** that analyzes textual data (posts, comments, etc.) using Natural Language Processing (NLP) techniques to extract meaningful insights such as sentiment and trends.
+This project is a **Social Media Monitoring System** that analyzes textual data (posts, comments, etc.) using Natural Language Processing (NLP) techniques to extract insights such as sentiment and trending keywords.
+
+The system processes unstructured text data and converts it into meaningful visual insights through an interactive dashboard.
 
 ---
 
-## 🧠 Features Implemented (Current Stage)
+## 🧠 Features
 
 * ✅ Data Input using CSV dataset
 * ✅ Text Preprocessing (Cleaning, Tokenization, Stopword Removal)
-* 🔄 Sentiment Analysis (Next Stage)
-* 🔄 Keyword Extraction
-* 🔄 Visualization Dashboard
+* ✅ Sentiment Analysis using VADER
+* ✅ Keyword Extraction using Frequency Analysis
+* ✅ Data Visualization (Charts + Word Cloud)
+* ✅ Interactive Dashboard using Streamlit
 
 ---
 
@@ -21,9 +24,11 @@ This project is a **Social Media Monitoring System** that analyzes textual data 
 * **Python**
 * **Pandas**
 * **NLTK**
-* **Matplotlib (upcoming)**
-* **WordCloud (upcoming)**
-* **Flask (upcoming)**
+* **VADER Sentiment Analyzer**
+* **Matplotlib**
+* **WordCloud**
+* **Streamlit**
+* **Git & GitHub**
 
 ---
 
@@ -33,17 +38,21 @@ This project is a **Social Media Monitoring System** that analyzes textual data 
 social-media/
 │
 ├── backend/
-│   ├── app.py
 │   └── modules/
 │       ├── preprocessing.py
 │       ├── sentiment.py
-│       └── keywords.py
+│       ├── keywords.py
+│       └── visualization.py
 │
 ├── data/
 │   └── sample_data.csv
 │
-├── frontend/ (to be implemented)
+├── outputs/
+│   ├── sentiment.png
+│   ├── keywords.png
+│   └── wordcloud.png
 │
+├── app_streamlit.py
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -53,39 +62,39 @@ social-media/
 
 ## ⚙️ Setup Instructions
 
-### 1. Clone Repository
+### 1️⃣ Clone Repository
 
-```bash
+```
 git clone git@github.com:Anugrah0619/social-media.git
 cd social-media
 ```
 
 ---
 
-### 2. Create Virtual Environment
+### 2️⃣ Create Virtual Environment
 
-```bash
+```
 python3 -m venv venv
 source venv/bin/activate
 ```
 
 ---
 
-### 3. Install Dependencies
+### 3️⃣ Install Dependencies
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
 ---
 
-### 4. Download NLTK Resources
+### 4️⃣ Download NLTK Data
 
-```bash
+```
 python
 ```
 
-```python
+```
 import nltk
 nltk.download('punkt')
 nltk.download('punkt_tab')
@@ -95,29 +104,44 @@ exit()
 
 ---
 
-### 5. Run the Application
+## ▶️ Run Backend (Optional)
 
-```bash
+```
 cd backend
 python app.py
 ```
 
 ---
 
-## 📊 Sample Output
+## 💻 Run Dashboard (Main)
 
-* Cleaned text after preprocessing
-* Ready for sentiment analysis
+```
+streamlit run app_streamlit.py
+```
+
+👉 Open in browser:
+http://localhost:8501
+
+---
+
+## 📊 Output
+
+The system provides:
+
+* Cleaned text data
+* Sentiment classification (Positive/Negative/Neutral)
+* Sentiment distribution charts
+* Top keywords
+* Word cloud visualization
 
 ---
 
 ## 📌 Future Enhancements
 
-* Sentiment Analysis using VADER
-* Keyword Extraction
-* Visualization (Charts + WordCloud)
-* Web Dashboard (Flask / Streamlit)
-* Live Data via API
+* Real-time data collection using Twitter API
+* Advanced keyword extraction using TF-IDF
+* Database integration (MongoDB)
+* Deployment on cloud platforms
 
 ---
 
@@ -131,4 +155,4 @@ python app.py
 
 ## 📄 License
 
-This project is for academic purposes.
+This project is developed for academic purposes.
