@@ -5,6 +5,9 @@ from nltk.tokenize import word_tokenize
 stop_words = set(stopwords.words('english'))
 
 def clean_text(text):
+    if not isinstance(text, str):
+        return ""
+
     # Remove URLs
     text = re.sub(r"http\S+|www\S+", "", text)
     
