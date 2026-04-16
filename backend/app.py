@@ -1,6 +1,7 @@
 import pandas as pd
 from modules.preprocessing import clean_text
 from modules.sentiment import get_sentiment
+from modules.keywords import extract_keywords
 
 print("🚀 File is running...")
 
@@ -29,6 +30,15 @@ def analyze_sentiment(df):
     
     return df
 
+def extract_top_keywords(df):
+    keywords = extract_keywords(df["clean_text"].tolist())
+    
+    print("\n🔑 Top Keywords:")
+    for word, freq in keywords:
+        print(f"{word}: {freq}")
+    
+    return keywords
+
 if __name__ == "__main__":
     print("👉 Inside main block")
     
@@ -37,3 +47,4 @@ if __name__ == "__main__":
     if df is not None:
         df = preprocess_data(df)
         df = analyze_sentiment(df)
+        keywords = extract_top_keywords(df)
